@@ -1,0 +1,240 @@
+/* チームサマリページ - シンプル静的スタイル */
+
+/* 基本セクション */
+.summary-section {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c5aa0;
+    margin: 0 0 20px 0;
+    padding-left: 12px;
+    border-left: 4px solid #2c5aa0;
+}
+
+/* メトリクスカード */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.metric-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+}
+
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+    flex: 1;
+    margin-right: 12px;
+}
+
+.metric-buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* ヘルプボタン - シンプル版 */
+.help-button {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(128, 128, 128, 0.1);
+    color: #777;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.help-button:hover {
+    background: #777;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* AIボタン - シンプル版 */
+.ai-button {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(40, 126, 216, 0.2);
+    color: #287ED8;
+}
+
+.ai-button:hover {
+    opacity: 0.7;
+    color: #1e6bb8;
+    background: white;
+}
+
+
+
+/* メトリクス値 */
+.metric-value {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+.unit {
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+}
+
+.trend {
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.trend.positive {
+    color: #10b981;
+}
+
+.trend.negative {
+    color: #ef4444;
+}
+
+/* チャートエリア */
+.chart-area {
+    margin-top: 32px;
+}
+
+.chart-area h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 16px 0;
+}
+
+.chart-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* アクティビティカード */
+.activity-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.activity-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.2s;
+}
+
+.activity-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+}
+
+.activity-icon.issue { background: #ef4444; }
+.activity-icon.pr { background: #1e7ed5; }
+.activity-icon.merge { background: #10b981; }
+.activity-icon.commit { background: #f59e0b; }
+.activity-icon.review { background: #8b5cf6; }
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.activity-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .activity-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .activity-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .summary-section {
+        padding: 16px;
+        margin-bottom: 16px;
+    }
+}
